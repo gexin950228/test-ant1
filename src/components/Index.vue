@@ -25,6 +25,9 @@ export default {
     components:{
         [ant.name]:ant
     },
+    created() {
+        this.TestAxios()
+    },
     methods:{
         TestAxios(){
             // axios.get("http://127.0.0.1:8000/chapter11/apiAxios").then(function(data){
