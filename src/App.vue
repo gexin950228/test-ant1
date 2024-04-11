@@ -15,16 +15,16 @@
 
   <div>
     <a-menu mode="horizontal">
-      <a-menu-item key="mail"> <router-link to="/">首页<MailOutlined /></router-link> </a-menu-item>
-      <a-menu-item key="book"> <router-link to="/books">书籍</router-link> </a-menu-item>
+      <a-menu-item key="mail"> <router-link to="/index">首页<MailOutlined /></router-link> </a-menu-item>
+      <a-menu-item key="book"> <router-link to="/books">书籍 <AppstoreOutlined/> </router-link> </a-menu-item>
       <a-menu-item key="post_test"> <router-link to="/post_test">post提交</router-link> </a-menu-item>
-      <a-menu-item key="post_file"> <router-link to="/post_file">单文件上传</router-link> </a-menu-item>
+      <a-menu-item key="post_file"> <router-link to="/post_file">单文件上传 <UploadOutlined /> </router-link> </a-menu-item>
       <a-menu-item key="post_files"> <router-link to="/post_files">多文件上传</router-link> </a-menu-item>
       
       <!-- <a-menu-item key="app" disabled> <appstore-outlined />不能点击 </a-menu-item> -->
-      <a-sub-menu>
+      <a-sub-menu> 
         <template v-slot:title>
-          <span class="submenu-title-wrapper">
+          <span class="submenu-title-wrapper"> 
             <setting-outlined />
             Navigation Three - Submenu
           </span>
@@ -48,7 +48,7 @@
       </a-sub-menu>
       <a-menu-item key="alipay">
         <router-link to="/home">
-          home
+          home <MenuOutlined />
         </router-link>
       </a-menu-item>
     </a-menu>
@@ -60,13 +60,11 @@
 </template>
 
 <script>
-
-
 // import HelloWorld from './components/HelloWorld.vue'
-
 // import ant from 'ant-design-vue'
 // import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { MailOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { AppstoreOutlined, UploadOutlined, MenuOutlined  } from '@ant-design/icons-vue'
 
 // import {
 //   HomeOutlined,
@@ -82,6 +80,9 @@ export default {
     // AppstoreOutlined,
     SettingOutlined,
     MailOutlined,
+    AppstoreOutlined,
+    UploadOutlined,
+    MenuOutlined,
   },
 }
 </script>

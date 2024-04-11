@@ -9,7 +9,7 @@ import axios from './axios.js'
 const app = createApp(App);
 app.use(ant).use(router)
 app.mount('#app')
-app.config.globalProperties.$ajax = axios
+app.config.globalProperties.$axios = axios
 
 // const install = axios.create({
 //   baseURL: "http://127.0.0.1:8000"

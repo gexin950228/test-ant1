@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory} from 'vue-router'
-
+import Books from './components/Book.vue'
+import Index from './components/Index.vue'
 const webHistory = createWebHistory()
 
 const router = createRouter({
@@ -12,9 +13,18 @@ const router = createRouter({
     },
     {
       path: "/",
-      name: "index",
-      component: () => import('./components/Index')
+      redirect: "/index",
     },
+    {
+      path: "/index",
+      name: "index",
+      component: Index,
+    },
+    {
+      path: "/books",
+      name: "books",
+      component: Books,
+    }
   ]
 })
 
