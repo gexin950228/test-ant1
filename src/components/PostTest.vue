@@ -3,12 +3,12 @@
     <a-form-item label="用户名">
       <a-input v-model:value="form.name" />
     </a-form-item>
-
     <a-form-item label="密码">
       <a-input v-model:value="form.password" type="password"/>
     </a-form-item>
-
-
+    <a-form-item label="这是上传文件">
+      <a-input type="file"></a-input>
+    </a-form-item>
     <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
       <a-button type="primary" @click="onSubmit">
         提交
@@ -17,7 +17,6 @@
         返回
       </a-button>
     </a-form-item>
-    
   </a-form>
 </template>
 <script>
@@ -38,8 +37,13 @@ export default {
   },
   methods: {
     onSubmit() {
-      alert(this.form.name);
-      alert(this.form.password)
+      // alert(this.form.name);
+      // alert(this.form.password)
+      const formData = new FormData();
+      formData.append("name", this.form.name)
+      formData.append("password", this.form.password)
+      alert(document.querySelector("input[type=file]").files[0])
+      this.form.append("upload", document.querySelector("input[type=file]").files[0])
       this.$axios.post('/chapter11/postTest', qs.stringify({
             name: this.form.name,
             password: this.form.password,
