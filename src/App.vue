@@ -17,9 +17,9 @@
     <a-menu mode="horizontal">
       <a-menu-item key="mail"> <router-link to="/index">首页<MailOutlined /></router-link> </a-menu-item>
       <a-menu-item key="book"> <router-link to="/books">书籍 <AppstoreOutlined/> </router-link> </a-menu-item>
-      <a-menu-item key="post_test"> <router-link to="/post_test">post提交</router-link> </a-menu-item>
-      <a-menu-item key="post_file"> <router-link to="/post_file">单文件上传 <UploadOutlined /> </router-link> </a-menu-item>
-      <a-menu-item key="post_files"> <router-link to="/post_files">多文件上传</router-link> </a-menu-item>
+      <a-menu-item key="post_test"> <router-link to="/post_test">post提交 <SubnodeOutlined /></router-link> </a-menu-item>
+      <a-menu-item key="post_file"> <router-link to="/file_upload">单文件上传 <UploadOutlined /> </router-link> </a-menu-item>
+      <a-menu-item key="post_files"> <router-link to="/files_upload">多文件上传 <UploadOutlined /></router-link> </a-menu-item>
       
       <!-- <a-menu-item key="app" disabled> <appstore-outlined />不能点击 </a-menu-item> -->
       <a-sub-menu> 
@@ -64,7 +64,7 @@
 // import ant from 'ant-design-vue'
 // import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { MailOutlined, SettingOutlined } from '@ant-design/icons-vue';
-import { AppstoreOutlined, UploadOutlined, MenuOutlined  } from '@ant-design/icons-vue'
+import { AppstoreOutlined, UploadOutlined, MenuOutlined, SubnodeOutlined  } from '@ant-design/icons-vue'
 
 // import {
 //   HomeOutlined,
@@ -83,6 +83,7 @@ export default {
     AppstoreOutlined,
     UploadOutlined,
     MenuOutlined,
+    SubnodeOutlined,
   },
 }
 </script>

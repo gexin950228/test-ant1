@@ -1,7 +1,7 @@
 <template>
   <div>
-    
-      <table>
+    <h1>book detail page</h1>
+    <table>
           <thead>
               <tr>
                 <th>id</th>
@@ -9,41 +9,42 @@
                 <th>作者</th>
               </tr>
           </thead>
-          <tbody v-for="book in books" :key="book">
-              <tr>
-                  <th>{{book.id}}</th>
-                  <th>
-                      <router-link :to="{name:'book_detail',params:{id:book.id}}">{{book.name}}</router-link>
-                  </th>
-
-                  <th>{{book.author}}</th>
-              </tr>
+          <tbody>
+            <tr>
+              <th>{{ data.id }}</th>
+              <th>{{ data.name }}</th>
+              <th>{{ data.author }}</th>
+            </tr>
           </tbody>
-      </table>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
-  name:"Book",
+  name: "BookDetail",
   data(){
-      return {
-          books:[]
-      }
+    return{
+      "data": [],
+    }
   },
-  created(){
-      this.getBooks();
+  mounted() {
+    this.getBookDetail();
   },
-  methods:{
-      getBooks(){
-          this.$axios.get("/chapter11/books").then((res) => {
-              console.log(res);
-              this.books = res.data.books
-          }).catch((res) => {
-              console.log(res);
-          })
-      }
-  }
+  methods: {
+    getBookDetail() {
+      this.data.id = this.$route.params.id,
+      this.$axios.get("/chapter11/book_detail", {
+        params: {
+          id: this.$route.params.id,
+        }
+      }).then((res) => {
+        this.data = res.data.book
+      }).catch((res) => {
+        console.log(res)
+      })
+    },
+  },
 }
 </script>
 
